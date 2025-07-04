@@ -4,7 +4,7 @@ A responsive, zombie-themed blog application built with Bootstrap 5, featuring d
 
 ## Screenshot
 
-![Zombie Chronicles Blog](https://via.placeholder.com/800x600/0a0a0a/00ff41?text=Zombie+Chronicles+Blog)
+![alt text](image-1.png) ![alt text](image-2.png)
 
 
 ## Project Overview
