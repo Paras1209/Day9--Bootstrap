@@ -1,0 +1,497 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Creepster&display=swap');
+
+:root {
+    --zombie-green: #00ff41;
+    --blood-red: #ff0000;
+    --dark-bg: #0a0a0a;
+    --zombie-glow: 0 0 10px #00ff41;
+    --blood-glow: 0 0 10px #ff0000;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --text-muted-visible: #888888;
+}
+
+* {
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--zombie-green);
+    font-family: 'Orbitron', monospace;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+    animation: backgroundPulse 4s infinite alternate;
+}
+
+.text-light {
+    color: var(--text-primary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted-visible) !important;
+}
+
+.text-white {
+    color: var(--text-primary) !important;
+}
+
+@keyframes backgroundPulse {
+    0% { background-color: var(--dark-bg); }
+    100% { background-color: #0f0f0f; }
+}
+.zombie-title {
+    font-family: 'Creepster', cursive;
+    text-shadow: var(--zombie-glow);
+    animation: flicker 2s infinite alternate, shake 0.5s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    75% { transform: translateX(1px); }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.card {
+    background: rgba(10, 10, 10, 0.95) !important;
+    border: 1px solid var(--zombie-green) !important;
+    box-shadow: var(--zombie-glow);
+    transition: all 0.4s ease;
+    animation: slideInUp 0.8s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0, 255, 65, 0.4);
+    border-color: var(--blood-red) !important;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 15px 30px rgba(0, 255, 65, 0.4); }
+    50% { box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4); }
+}
+
+.card-header {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid var(--zombie-green) !important;
+}
+
+.card-body {
+    background: rgba(10, 10, 10, 0.9);
+}
+
+.btn-zombie {
+    background: linear-gradient(45deg, var(--zombie-green), #00cc33) !important;
+    border: none !important;
+    color: black !important;
+    font-weight: bold;
+    box-shadow: var(--zombie-glow);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-zombie:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-zombie:hover {
+    background: linear-gradient(45deg, #00cc33, var(--zombie-green)) !important;
+    color: black !important;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 65, 0.5);
+}
+
+.btn-zombie:hover:before {
+    left: 100%;
+}
+
+.btn-zombie:focus {
+    color: black !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 65, 0.25);
+}
+
+.navbar-dark {
+    background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+    border-bottom: 2px solid var(--zombie-green);
+    box-shadow: 0 2px 15px rgba(0, 255, 65, 0.3);
+    animation: slideInDown 0.6s ease-out;
+}
+
+.nav-link {
+    position: relative;
+    overflow: hidden;
+    color: var(--text-secondary) !important;
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--zombie-green);
+    transition: left 0.3s ease;
+}
+
+.nav-link:hover:before {
+    left: 0;
+}
+
+.nav-link:hover {
+    color: var(--zombie-green) !important;
+}
+
+.nav-link.active {
+    color: var(--zombie-green) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border-bottom: 1px solid var(--zombie-green);
+    animation: fadeInRotate 1s ease-out;
+}
+
+.footer-dark {
+    background: linear-gradient(135deg, #000000, #0a0a0a) !important;
+    border-top: 2px solid var(--zombie-green);
+    animation: slideInUp 0.8s ease-out;
+}
+
+
+.glow-text {
+    text-shadow: var(--zombie-glow);
+    transition: text-shadow 0.3s ease;
+    color: var(--zombie-green) !important;
+}
+
+.glow-text:hover {
+    text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41;
+}
+
+.blood-text {
+    color: var(--blood-red) !important;
+    text-shadow: var(--blood-glow);
+}
+
+
+.zombie-badge {
+    background: var(--zombie-green) !important;
+    color: black !important;
+    font-weight: bold;
+    animation: bounce 2s infinite;
+}
+
+.blood-badge {
+    background: var(--blood-red) !important;
+    color: white !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+
+.card-img-top {
+    transition: all 0.4s ease;
+    filter: grayscale(0.5) contrast(1.2);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+    filter: grayscale(0) contrast(1.5);
+}
+
+
+.alert-zombie {
+    background: rgba(0, 255, 65, 0.15) !important;
+    border: 1px solid var(--zombie-green) !important;
+    color: var(--zombie-green) !important;
+    animation: slideInUp 0.6s ease-out;
+}
+
+
+.spinner-zombie {
+    border: 4px solid rgba(0, 255, 65, 0.3);
+    border-top: 4px solid var(--zombie-green);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.progress-zombie {
+    background: rgba(0, 255, 65, 0.2);
+    height: 4px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.progress-bar-zombie {
+    background: linear-gradient(90deg, var(--zombie-green), var(--blood-red));
+    animation: progressGlow 2s infinite;
+    height: 100%;
+    border-radius: 2px;
+}
+
+@keyframes progressGlow {
+    0%, 100% { box-shadow: 0 0 10px var(--zombie-green); }
+    50% { box-shadow: 0 0 20px var(--blood-red); }
+}
+
+
+.stagger-animation {
+    animation-delay: calc(var(--stagger) * 0.1s);
+}
+
+
+.floating-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--zombie-green);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--zombie-green); }
+}
+
+
+.form-control {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid var(--zombie-green) !important;
+    color: var(--text-primary) !important;
+}
+
+.form-control:focus {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-color: var(--zombie-green) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 65, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-muted-visible) !important;
+}
+
+
+.dropdown-menu {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 1px solid var(--zombie-green) !important;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-item {
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 255, 65, 0.1) !important;
+    color: var(--zombie-green) !important;
+}
+
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid var(--zombie-green) !important;
+    backdrop-filter: blur(10px);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--zombie-green) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--zombie-green) !important;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+
+
+a {
+    color: var(--zombie-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #00cc33;
+    text-shadow: 0 0 5px var(--zombie-green);
+}
+
+
+.list-unstyled a {
+    color: var(--text-muted-visible) !important;
+    transition: all 0.3s ease;
+}
+
+.list-unstyled a:hover {
+    color: var(--zombie-green) !important;
+    text-shadow: 0 0 5px var(--zombie-green);
+}
+
+
+.bg-dark {
+    background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+}
+
+
+small {
+    color: var(--text-muted-visible) !important;
+    font-weight: 500;
+}
+
+
+.position-absolute.top-0.start-0 {
+    z-index: 10;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+#backToTop {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.border-success {
+    border-color: var(--zombie-green) !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--zombie-green);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc33;
+}
+
+
+@media (max-width: 768px) {
+    .zombie-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .display-4 {
+        font-size: 2rem !important;
+    }
+    
+    .lead {
+        font-size: 1.1rem !important;
+    }
+}
+
+
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+    outline: 2px solid var(--zombie-green);
+    outline-offset: 2px;
+}
+
+
+@media (prefers-contrast: high) {
+    .text-muted {
+        color: #ffffff !important;
+    }
+    
+    .card {
+        border-width: 2px !important;
+    }
+}

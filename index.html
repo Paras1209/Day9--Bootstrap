@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Apocalypse Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold glow-text" href="#home">
+                <i class="bi bi-radioactive me-2"></i>
+                ZOMBIE CHRONICLES
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" aria-current="page">
+                            <i class="bi bi-house-door me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">
+                            <i class="bi bi-journal-text me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">
+                            <i class="bi bi-grid-3x3-gap me-1"></i>Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <i class="bi bi-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-zombie btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="btn btn-zombie btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="User menu">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 fw-bold zombie-title mb-4">ZOMBIE APOCALYPSE BLOG</h1>
+                    <p class="lead text-white mb-4 fs-4">Your ultimate survival guide through the undead apocalypse</p>
+                    <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+                        <span class="badge bg-danger fs-6 floating-icon px-3 py-2">
+                            <i class="bi bi-exclamation-triangle-fill me-1"></i>🧟‍♂️ OUTBREAK ACTIVE
+                        </span>
+                        <span class="badge zombie-badge fs-6 floating-icon px-3 py-2">
+                            <i class="bi bi-shield-exclamation me-1"></i>⚠️ QUARANTINE ZONE
+                        </span>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="card bg-transparent border-success">
+                                <div class="card-body text-center">
+                                    <h6 class="text-white mb-3">
+                                        <i class="bi bi-activity me-2"></i>Global Survival Status
+                                    </h6>
+                                    <div class="progress-zombie mb-2">
+                                        <div class="progress-bar-zombie" style="width: 75%"></div>
+                                    </div>
+                                    <div class="row text-center">
+                                        <div class="col-6">
+                                            <small class="text-white fw-bold">Survival Rate: 75%</small>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-white">
+                                                <i class="bi bi-people-fill me-1"></i>2.5K Active
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 bg-dark border-bottom border-success">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <h3 class="glow-text mb-2 display-6">127</h3>
+                            <small class="text-white fw-semibold">
+                                <i class="bi bi-book me-1"></i>Survival Guides
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <h3 class="glow-text mb-2 display-6">2.5K</h3>
+                            <small class="text-white fw-semibold">
+                                <i class="bi bi-people me-1"></i>Survivors Reading
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <h3 class="glow-text mb-2 display-6">45</h3>
+                            <small class="text-white fw-semibold">
+                                <i class="bi bi-calendar3 me-1"></i>Days Since Outbreak
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <h3 class="glow-text mb-2 display-6">98%</h3>
+                            <small class="text-white fw-semibold">
+                                <i class="bi bi-check-circle me-1"></i>Accuracy Rate
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-4">
+        <div class="alert alert-zombie" role="alert">
+            <div class="d-flex align-items-center">
+                <div class="spinner-zombie me-3"></div>
+                <div class="flex-grow-1">
+                    <h6 class="mb-1"><strong>🚨 EMERGENCY BROADCAST</strong></h6>
+                    <p class="mb-0">New critical survival intel available. Latest research on zombie behavior patterns.</p>
+                </div>
+                <button class="btn btn-zombie btn-sm ms-3">View Update</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <section id="blog">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="fw-bold glow-text">Latest Survival Posts</h2>
+                        <div class="dropdown">
+                            <button class="btn btn-zombie dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown">
+                                Sort by: Latest
+                            </button>
+                            <ul class="dropdown-menu bg-dark border-success">
+                                <li><a class="dropdown-item text-light" href="#">Latest</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Most Read</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Critical</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4 border-success">
+                        <div class="badge bg-danger position-absolute top-0 start-0 m-2 z-3">FEATURED</div>
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="https://picsum.photos/500/300?random=featured" class="img-fluid rounded-start h-100" alt="Featured post">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body text-light">
+                                    <h4 class="card-title glow-text">The Ultimate Zombie Survival Masterclass</h4>
+                                    <p class="card-text">Comprehensive 10-part series covering everything from basic survival to advanced combat techniques. Written by military survival experts.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar3 me-1"></i>Today
+                                                <i class="bi bi-eye ms-2 me-1"></i>15.2K views
+                                            </small>
+                                        </div>
+                                        <a href="#" class="btn btn-zombie">Read Series</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm stagger-animation" style="--stagger: 1">
+                                <img src="https://picsum.photos/400/250?random=zombie1" class="card-img-top" alt="Zombie survival guide">
+                                <div class="card-body d-flex flex-column text-light">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge blood-badge">🧟‍♂️ BEGINNER</span>
+                                        <small class="text-muted">5 min read</small>
+                                    </div>
+                                    <h5 class="card-title glow-text">How to Survive Your First Zombie Encounter</h5>
+                                    <p class="card-text">Essential tips and tricks for new survivors facing their first undead threat. Learn the basics of zombie behavior...</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://picsum.photos/30/30?random=author1" class="rounded-circle me-2" alt="Author">
+                                            <small class="text-muted">Dr. Sarah Chen • Day 1</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <small class="text-muted"><i class="bi bi-heart"></i> 234</small>
+                                                <small class="text-muted"><i class="bi bi-chat"></i> 45</small>
+                                                <small class="text-muted"><i class="bi bi-share"></i> 12</small>
+                                            </div>
+                                            <a href="#" class="btn btn-zombie btn-sm" data-bs-toggle="modal" data-bs-target="#blogModal1">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm stagger-animation" style="--stagger: 2">
+                                <img src="https://picsum.photos/400/250?random=zombie2" class="card-img-top" alt="Zombie weapons">
+                                <div class="card-body d-flex flex-column text-light">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge zombie-badge">⚔️ WEAPONS</span>
+                                        <small class="text-muted">8 min read</small>
+                                    </div>
+                                    <h5 class="card-title glow-text">Best Weapons for Zombie Apocalypse</h5>
+                                    <p class="card-text">Comprehensive review of melee and ranged weapons. From baseball bats to crossbows - find your perfect arsenal...</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://picsum.photos/30/30?random=author2" class="rounded-circle me-2" alt="Author">
+                                            <small class="text-muted">Marcus Steel • Day 5</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <small class="text-muted"><i class="bi bi-heart"></i> 567</small>
+                                                <small class="text-muted"><i class="bi bi-chat"></i> 89</small>
+                                                <small class="text-muted"><i class="bi bi-share"></i> 23</small>
+                                            </div>
+                                            <a href="#" class="btn btn-zombie btn-sm" data-bs-toggle="modal" data-bs-target="#blogModal2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm stagger-animation" style="--stagger: 3">
+                                <img src="https://picsum.photos/400/250?random=zombie3" class="card-img-top" alt="Safe house building">
+                                <div class="card-body d-flex flex-column text-light">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge zombie-badge">🏰 SHELTER</span>
+                                        <small class="text-muted">12 min read</small>
+                                    </div>
+                                    <h5 class="card-title glow-text">Building the Perfect Safe House</h5>
+                                    <p class="card-text">Step-by-step guide to fortifying your shelter. Learn about barricades, escape routes, and long-term survival...</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://picsum.photos/30/30?random=author3" class="rounded-circle me-2" alt="Author">
+                                            <small class="text-muted">Emma Rodriguez • Day 10</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <small class="text-muted"><i class="bi bi-heart"></i> 892</small>
+                                                <small class="text-muted"><i class="bi bi-chat"></i> 156</small>
+                                                <small class="text-muted"><i class="bi bi-share"></i> 34</small>
+                                            </div>
+                                            <a href="#" class="btn btn-zombie btn-sm" data-bs-toggle="modal" data-bs-target="#blogModal3">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm stagger-animation" style="--stagger: 4">
+                                <img src="https://picsum.photos/400/250?random=zombie4" class="card-img-top" alt="Zombie types">
+                                <div class="card-body d-flex flex-column text-light">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge blood-badge">🧟‍♀️ RESEARCH</span>
+                                        <small class="text-muted">15 min read</small>
+                                    </div>
+                                    <h5 class="card-title glow-text">Zombie Types: Know Your Enemy</h5>
+                                    <p class="card-text">Detailed analysis of different zombie variants: Walkers, Runners, Spitters, and the dreaded Brutes...</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://picsum.photos/30/30?random=author4" class="rounded-circle me-2" alt="Author">
+                                            <small class="text-muted">Prof. Alex Turner • Day 15</small>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <small class="text-muted"><i class="bi bi-heart"></i> 1.2K</small>
+                                                <small class="text-muted"><i class="bi bi-chat"></i> 203</small>
+                                                <small class="text-muted"><i class="bi bi-share"></i> 67</small>
+                                            </div>
+                                            <a href="#" class="btn btn-zombie btn-sm" data-bs-toggle="modal" data-bs-target="#blogModal4">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-zombie">Load More Posts</button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <section id="categories" class="card mb-4">
+                        <div class="card-header bg-dark border-success">
+                            <h6 class="glow-text mb-0">Survival Categories</h6>
+                        </div>
+                        <div class="card-body text-light">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <a href="#" class="text-decoration-none glow-text">Beginner Survival</a>
+                                <span class="badge zombie-badge">23</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <a href="#" class="text-decoration-none glow-text">Weapons & Combat</a>
+                                <span class="badge zombie-badge">18</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <a href="#" class="text-decoration-none glow-text">Shelter & Safety</a>
+                                <span class="badge zombie-badge">15</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <a href="#" class="text-decoration-none glow-text">Medical & Health</a>
+                                <span class="badge zombie-badge">12</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <a href="#" class="text-decoration-none glow-text">Psychology</a>
+                                <span class="badge zombie-badge">8</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark border-success">
+                            <h6 class="glow-text mb-0">Recent Posts</h6>
+                        </div>
+                        <div class="card-body text-light">
+                            <div class="d-flex mb-3">
+                                <img src="https://picsum.photos/60/60?random=recent1" class="rounded me-3" alt="Recent post">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#" class="text-decoration-none glow-text">Emergency Food Storage</a></h6>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="https://picsum.photos/60/60?random=recent2" class="rounded me-3" alt="Recent post">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#" class="text-decoration-none glow-text">Night Vision Tactics</a></h6>
+                                    <small class="text-muted">5 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="https://picsum.photos/60/60?random=recent3" class="rounded me-3" alt="Recent post">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1"><a href="#" class="text-decoration-none glow-text">Group Survival Dynamics</a></h6>
+                                    <small class="text-muted">1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-dark border-success">
+                            <h6 class="glow-text mb-0">Stay Informed</h6>
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="small">Get critical survival updates delivered to your secure communication device.</p>
+                            <div class="mb-3">
+                                <input type="email" class="form-control bg-dark border-success text-light" placeholder="Enter communication ID">
+                            </div>
+                            <button class="btn btn-zombie w-100">Subscribe to Intel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title glow-text" id="searchModalLabel">
+                        <i class="bi bi-search me-2"></i>Search Survival Intel
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Search for survival guides, weapons, tactics..." autofocus>
+                    </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge zombie-badge">survival</span>
+                        <span class="badge zombie-badge">weapons</span>
+                        <span class="badge zombie-badge">shelter</span>
+                        <span class="badge zombie-badge">medical</span>
+                        <span class="badge zombie-badge">psychology</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-zombie">
+                        <i class="bi bi-search me-2"></i>Search Intel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="blogModal1" tabindex="-1" aria-labelledby="blogModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark border border-success">
+                <div class="modal-header border-bottom border-success">
+                    <h5 class="modal-title glow-text" id="blogModal1Label">How to Survive Your First Zombie Encounter</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-light">
+                    <img src="https://picsum.photos/600/300?random=zombie1" class="img-fluid mb-3" alt="Zombie survival">
+                    <p>When you first encounter a zombie, your survival depends on staying calm and following these critical steps:</p>
+                    <ol class="text-light">
+                        <li><strong>Stay Quiet:</strong> Zombies are attracted to noise. Move silently and avoid running unless absolutely necessary.</li>
+                        <li><strong>Assess the Threat:</strong> Count the number of zombies and identify escape routes.</li>
+                        <li><strong>Aim for the Head:</strong> If combat is unavoidable, target the brain to neutralize the threat.</li>
+                        <li><strong>Conserve Energy:</strong> Don't waste stamina on unnecessary movements.</li>
+                    </ol>
+                    <p>Remember: Your goal is survival, not heroics. Live to fight another day.</p>
+                </div>
+                <div class="modal-footer border-top border-success">
+                    <button type="button" class="btn btn-zombie" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-5 bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="glow-text mb-4">About Zombie Chronicles</h2>
+                    <p class="text-light mb-4">
+                        Founded during the early days of the outbreak, Zombie Chronicles has become the most trusted source for survival information in the apocalypse. Our team of military experts, medical professionals, and survival specialists work around the clock to bring you life-saving intel.
+                    </p>
+                    <div class="row text-center">
+                        <div class="col-6 mb-3">
+                            <h4 class="glow-text">50M+</h4>
+                            <small class="text-muted">Lives Saved</small>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h4 class="glow-text">24/7</h4>
+                            <small class="text-muted">Intel Updates</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://picsum.photos/600/400?random=about" class="img-fluid rounded border border-success" alt="About us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="glow-text mb-3">
+                        <i class="bi bi-radioactive me-2"></i>
+                        ZOMBIE CHRONICLES
+                    </h5>
+                    <p class="text-light">Your ultimate survival resource for the undead apocalypse. Expert guides, survival tips, and critical intel to keep you alive.</p>
+                    <div class="mt-3">
+                        <span class="badge blood-badge">🧟‍♂️ THREAT LEVEL: MAXIMUM</span>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="glow-text mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-decoration-none text-muted">Home</a></li>
+                        <li><a href="#blog" class="text-decoration-none text-muted">Blog</a></li>
+                        <li><a href="#categories" class="text-decoration-none text-muted">Categories</a></li>
+                        <li><a href="#about" class="text-decoration-none text-muted">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="glow-text mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-muted">Survival</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Weapons</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Medical</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Psychology</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="glow-text mb-3">Emergency Network</h6>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white fs-4 floating-icon" title="Emergency Radio">
+                            <i class="bi bi-broadcast"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4 floating-icon" title="Survivor Network">
+                            <i class="bi bi-people"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4 floating-icon" title="Safe Zone Map">
+                            <i class="bi bi-geo-alt"></i>
+                        </a>
+                        <a href="#" class="text-white fs-4 floating-icon" title="Medical Aid">
+                            <i class="bi bi-hospital"></i>
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        <i class="bi bi-shield-check me-1"></i>
+                        Secure communications established
+                    </small>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--zombie-green);">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 glow-text">&copy; 2025 Zombie Chronicles. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">Stay alive. Stay informed. Stay reading.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="btn btn-zombie position-fixed bottom-0 end-0 m-3" style="display: none; z-index: 1000;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
