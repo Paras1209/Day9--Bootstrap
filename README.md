@@ -4,8 +4,7 @@ A responsive, zombie-themed blog application built with Bootstrap 5, featuring d
 
 ## Screenshot
 
-![alt text](image-1.png) ![alt text](image-2.png)
-
+![alt text](image.png)
 
 ## Project Overview
 
